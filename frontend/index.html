@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Security Overview | Incident Tracker</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <header class="topbar">
+            <div class="brand">
+                <span class="brand-mark">S</span>
+                <span>SECURITY / OPERATIONS</span>
+            </div>
+
+            <span class="header-label">INCIDENT MANAGEMENT</span>
+        </header>
+
+        <main>
+
+            <section class="page-heading">
+                <div>
+                    <p class="eyebrow">OVERVIEW</p>
+                    <h1>Security overview</h1>
+                    <p class="subtitle">
+                        Monitor, investigate, and manage security incidents.
+                    </p>
+                </div>
+
+                <div class="date-label" id="current-date"></div>
+            </section>
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+                    <p>Total incidents</p>
+                    <h2 id="total-incidents">0</h2>
+                    <span>All reported incidents</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>Critical incidents</p>
+                    <h2 id="critical-incidents">0</h2>
+                    <span>Highest priority</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>High severity</p>
+                    <h2 id="high-incidents">0</h2>
+                    <span>Require attention</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>Open incidents</p>
+                    <h2 id="open-incidents">0</h2>
+                    <span>Awaiting resolution</span>
+                </article>
+
+            </section>
+
+            <section class="charts-grid">
+
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">SEVERITY</p>
+                            <h3>Incidents by severity</h3>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="severity-chart"></canvas>
+                    </div>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">CLASSIFICATION</p>
+                            <h3>Incidents by category</h3>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="category-chart"></canvas>
+                    </div>
+                </article>
+
+            </section>
+
+            <section class="panel recent-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">ACTIVITY</p>
+                        <h3>Recent incidents</h3>
+                    </div>
+
+                    <span class="record-count" id="record-count">
+                        0 records
+                    </span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>INCIDENT</th>
+                                <th>CATEGORY</th>
+                                <th>SEVERITY</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="incident-table">
+                            <tr>
+                                <td colspan="4" class="empty-state">
+                                    No incidents to display yet.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            SECURITY OPERATIONS <span>·</span> INCIDENT TRACKER
+        </footer>
+
+    </div>
+
+</body>
+</html>
